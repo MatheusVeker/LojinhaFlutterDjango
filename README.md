@@ -40,13 +40,6 @@ O backend foi estruturado com as seguintes entidades principais:
 Entre na pasta do servidor:
 ```bash
 cd apiflutterlojinha
-# Windows
-python -m venv venv
-.\venv\Scripts\activate
-
-# Mac/Linux
-python3 -m venv venv
-source venv/bin/activate
 ```
 Instale as dependências necessárias:
 ```bash
@@ -63,6 +56,16 @@ DEBUG=True
 Prepare o banco de dados e inicie o serviço:
 ```bash
 python manage.py migrate
+```
+Criar um Superusuário (Obrigatório para o primeiro login):
+
+```bash
+python manage.py createsuperuser
+```
+Siga as instruções no terminal para definir o nome de utilizador, e-mail e palavra-passe. Este utilizador será usado para realizar o primeiro acesso ao aplicativo Flutter.
+
+Inicie o servidor:
+```bash
 python manage.py runserver
 ```
 O servidor rodará em: http://127.0.0.1:8000
